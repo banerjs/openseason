@@ -11,8 +11,6 @@ var regulations = require('./routes/regulations');
 
 var app = express();
 
-app.set('pg', process.env.DATABASE_URL);
-
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
