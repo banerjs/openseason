@@ -1,9 +1,65 @@
 <html>
 <head>
 	<title>Open Season</title>
+	<link rel="stylesheet" href="/stylesheets/style.css"/>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+			#mc_embed_signup{background:none; clear:left; font:14px Helvetica,Arial,sans-serif; }
+			/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+			   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+	</style>
 </head>
 <body>
-	<h1>It's Open Season!!</h1>
-	<p>This is a simple HTML placeholder page. Once we have the front-end developed for the AngularJS, we can expand this portion out</p>
+
+	<div class="videoContainer">
+		<video id="bgvid" autoplay="autoplay" muted="true" loop>
+		  <source src="https://s3-us-west-2.amazonaws.com/openseasonmedia/backgroundVideo.mp4" type="video/mp4" >
+		Your browser does not support the video tag.
+		</video>
+	</div>
+
+	<div class="homeTopBar row" scroll-position="scroll" ng-class="{sticky: scroll > 150, small: scroll > 150}">
+		<div class="col-md-4">
+			<h1 id="logo">OpenSeason</h1>
+		</div>
+		<div class="col-md-8 searchOptions">
+			<typeahead items="items" prompt="Search by State" title="name" subtitle="abbreviation" model="name" on-select="onItemSelected()" />
+		</div>
+	</div>
+
+	<div class="bottom row">
+		<div class="blurbBox col-md-4 col-md-offset-2">
+			<h2>Be Informed. Get Local.</h2>
+			<p>Hunting and fishing regulations vary drastically by state, region, and even body of water.  With OpenSeason, you'll get the most up to date regulatory information for your next outdoor adventure.</p>
+		</div>
+		<div class="blurbBox col-md-4">
+			<h2>No Hassle Regulation</h2>
+			<p>Search by location, and get all the rules relevant to you.  No more searching through large PDF documents.  Our data comes from State Game Fish and Parks, and is updated frequently.</p>
+		</div>
+
+		<!-- Begin MailChimp Signup Form -->
+		<div id="mc_embed_signup" class="col-md-4">
+		<form action="//openseasonapp.us9.list-manage.com/subscribe/post?u=4b5f971cab10fae4dae35ce5b&amp;id=2fc796bb1c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+		    <div id="mc_embed_signup_scroll">
+		<div class="mc-field-group">
+			<label for="mce-EMAIL">Email Address</label>
+			<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+		</div>
+			<div id="mce-responses" class="clear">
+				<div class="response" id="mce-error-response" style="display:none"></div>
+				<div class="response" id="mce-success-response" style="display:none"></div>
+			</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+		    <div style="position: absolute; left: -5000px;"><input type="text" name="b_4b5f971cab10fae4dae35ce5b_2fc796bb1c" tabindex="-1" value=""></div>
+		    <div class="clear"><input type="submit" value="Find out more" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+		    </div>
+		</form>
+		</div>
+		<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+		<!--End mc_embed_signup-->
+
+	</div>
+</div>
+
 </body>
 </html>
