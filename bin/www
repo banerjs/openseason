@@ -7,3 +7,17 @@ app.set('port', process.env.PORT || 3000);
 var server = app.listen(app.get('port'), function() {
   debug('Express server listening on port ' + server.address().port);
 });
+
+var pg = require('pg');
+var client = new pg.Client(app.get('pg'));
+client.connect(function(err) {
+	if (err) {
+		return debug('could not connect to postgres', err);
+	}
+	client.query('CREATE TABLE IF NOT EXISTS subscribers (email text);', function(err, result) {
+		if (err) {
+			return console.error('error running the query', err);
+		}
+		debug('Table Exists. Proceed as planned');
+	})
+});
